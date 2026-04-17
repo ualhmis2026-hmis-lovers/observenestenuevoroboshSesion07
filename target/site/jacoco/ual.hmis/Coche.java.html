@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Coche.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sesion07</a> &gt; <a href="index.source.html" class="el_package">ual.hmis</a> &gt; <span class="el_source">Coche.java</span></div><h1>Coche.java</h1><pre class="source lang-java linenums">package ual.hmis;
+
+import java.util.Objects;
+
+public class Coche {
+    private String marca;
+    private String modelo;
+    private int año;
+    private int precio;
+
+    // Constructor por defecto
+<span class="fc" id="L12">    public Coche() {}</span>
+
+    
+    
+    public Coche(String marca, String modelo, int año, int precio) {
+<span class="fc" id="L17">		super();</span>
+<span class="fc" id="L18">		this.marca = marca;</span>
+<span class="fc" id="L19">		this.modelo = modelo;</span>
+<span class="fc" id="L20">		this.año = año;</span>
+<span class="fc" id="L21">		this.precio = precio;</span>
+<span class="fc" id="L22">	}</span>
+
+
+	// Getters y setters
+    public String getMarca() {
+<span class="fc" id="L27">        return marca;</span>
+    }
+
+    public void setMarca(String marca) {
+<span class="fc" id="L31">        this.marca = marca;</span>
+<span class="fc" id="L32">    }</span>
+
+    public String getModelo() {
+<span class="fc" id="L35">        return modelo;</span>
+    }
+
+    public void setModelo(String modelo) {
+<span class="fc" id="L39">        this.modelo = modelo;</span>
+<span class="fc" id="L40">    }</span>
+
+    public int getAño() {
+<span class="fc" id="L43">        return año;</span>
+    }
+
+    public void setAño(int año) {
+<span class="fc" id="L47">        this.año = año;</span>
+<span class="fc" id="L48">    }</span>
+
+    public int getPrecio() {
+<span class="fc" id="L51">        return precio;</span>
+    }
+
+    public void setPrecio(int precio) {
+<span class="fc" id="L55">        this.precio = precio;</span>
+<span class="fc" id="L56">    }</span>
+
+
+	@Override
+	public boolean equals(Object obj) {
+<span class="fc bfc" id="L61" title="All 2 branches covered.">		if (this == obj)</span>
+<span class="fc" id="L62">			return true;</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">		if (obj == null)</span>
+<span class="fc" id="L64">			return false;</span>
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">		if (getClass() != obj.getClass())</span>
+<span class="nc" id="L66">			return false;</span>
+<span class="fc" id="L67">		Coche other = (Coche) obj;</span>
+<span class="pc bpc" id="L68" title="3 of 8 branches missed.">		return año == other.año &amp;&amp; Objects.equals(marca, other.marca) &amp;&amp; Objects.equals(modelo, other.modelo)</span>
+				&amp;&amp; precio == other.precio;
+	}
+
+
+
+	@Override
+	public String toString() {
+<span class="fc" id="L76">		return &quot;Coche [marca=&quot; + marca + &quot;, modelo=&quot; + modelo + &quot;, año=&quot; + año + &quot;, precio=&quot; + precio + &quot;]&quot;;</span>
+	}
+	
+	
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
