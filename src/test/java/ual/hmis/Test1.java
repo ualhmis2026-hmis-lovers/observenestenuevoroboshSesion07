@@ -133,4 +133,10 @@ public class Test1 {
         Coche coche1 = new Coche();
         assert(coche1.getPrecio() == 0);
     }
+    
+    @Test
+    public void testMainConstructor() {
+        Main main = new Main();
+        assert(main != null);
+    }
 }
