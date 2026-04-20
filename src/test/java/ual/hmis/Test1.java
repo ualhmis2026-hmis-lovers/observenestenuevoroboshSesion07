@@ -74,4 +74,63 @@ public class Test1 {
     public void testMain() {
         Main.main(new String[]{});
     }
+    
+    @Test
+    public void testEqualsConDiferenteClase() {
+        Coche coche1 = new Coche("rojo", "ford", 100, 4);
+        String otroObjeto = "no es un coche";
+        assert(!coche1.equals(otroObjeto));
+    }
+    
+    @Test
+    public void testEqualsConDiferenteModelo() {
+        Coche coche1 = new Coche("rojo", "ford", 100, 4);
+        Coche coche2 = new Coche("rojo", "fiesta", 100, 4);
+        assert(!coche1.equals(coche2));
+    }
+    
+    @Test
+    public void testEqualsConDiferenteAño() {
+        Coche coche1 = new Coche("rojo", "ford", 100, 4);
+        Coche coche2 = new Coche("rojo", "ford", 2020, 4);
+        assert(!coche1.equals(coche2));
+    }
+    
+    @Test
+    public void testEqualsConDiferentePrecio() {
+        Coche coche1 = new Coche("rojo", "ford", 100, 4);
+        Coche coche2 = new Coche("rojo", "ford", 100, 50000);
+        assert(!coche1.equals(coche2));
+    }
+    
+    @Test
+    public void testEqualsConTodosIguales() {
+        Coche coche1 = new Coche("rojo", "ford", 100, 4);
+        Coche coche2 = new Coche("rojo", "ford", 100, 4);
+        assert(coche1.equals(coche2));
+    }
+    
+    @Test
+    public void testGettersMarcaVacia() {
+        Coche coche1 = new Coche();
+        assert(coche1.getMarca() == null);
+    }
+    
+    @Test
+    public void testGettersModeloVacio() {
+        Coche coche1 = new Coche();
+        assert(coche1.getModelo() == null);
+    }
+    
+    @Test
+    public void testGettersAñoVacio() {
+        Coche coche1 = new Coche();
+        assert(coche1.getAño() == 0);
+    }
+    
+    @Test
+    public void testGettersPrecioVacio() {
+        Coche coche1 = new Coche();
+        assert(coche1.getPrecio() == 0);
+    }
 }
