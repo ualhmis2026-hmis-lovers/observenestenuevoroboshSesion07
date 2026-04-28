@@ -92,10 +92,50 @@
           </additionalOptions>
         </configuration>
       </plugin>
+		<plugin>
+			<groupId>org.owasp</groupId>
+			<artifactId>dependency-check-maven</artifactId>
+			<version>12.1.3</version>
+			<executions>
+				<execution>
+					<id>dependency-check</id>
+					<phase>verify</phase>
+					<goals>
+						<goal>check</goal>
+					</goals>
+				</execution>
+			</executions>
+			<configuration>
+				<failBuildOnCVSS>7</failBuildOnCVSS>
+				<formats>
+					<format>HTML</format>
+					<format>XML</format>
+				</formats>
+			</configuration>
+		</plugin>
         </plugins>
     </build>
 	<reporting>
     <plugins>
+	<plugin>
+		<groupId>org.owasp</groupId>
+		<artifactId>dependency-check-maven</artifactId>
+		<version>12.1.3</version>
+		<configuration>
+			<skipTestScope>false</skipTestScope>
+			<formats>
+				<format>HTML</format>
+				<format>XML</format>
+			</formats>
+		</configuration>
+		<reportSets>
+			<reportSet>
+				<reports>
+					<report>aggregate</report>
+				</reports>
+			</reportSet>
+		</reportSets>
+	</plugin>
 	<plugin>
 		<groupId>org.apache.maven.plugins</groupId>
 		<artifactId>maven-javadoc-plugin</artifactId>
@@ -187,6 +227,27 @@
 		<artifactId>junit-platform-suite-engine</artifactId>
 		<version>1.10.0</version>
 		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.12</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-collections4</artifactId>
+		<version>4.0</version>
+	</dependency>
+	<dependency>
+		<groupId>commons-collections</groupId>
+		<artifactId>commons-collections</artifactId>
+		<version>3.2.2</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.logging.log4j</groupId>
+		<artifactId>log4j-core</artifactId>
+		<version>2.15.0</version>
 	</dependency>
   </dependencies>
 </project>
