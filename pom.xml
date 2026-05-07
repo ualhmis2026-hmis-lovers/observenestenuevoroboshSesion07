@@ -10,6 +10,11 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
     <build>
+		<plugin>
+      <groupId>org.sonarsource.scanner.maven</groupId>
+      <artifactId>sonar-maven-plugin</artifactId>
+      <version>3.9.0.2155</version>
+    </plugin>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
